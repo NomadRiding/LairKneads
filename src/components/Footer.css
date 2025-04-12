@@ -1,0 +1,18 @@
+.footer {
+  background-color: #282c34;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.social-media-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between icons */
+}
+
+.disclaimer {
+  margin-top: 20px;
+  font-size: 0.7em; /* Smaller font size for the disclaimer */
+  color: #ccc; /* Lighter color for the disclaimer text */
+}

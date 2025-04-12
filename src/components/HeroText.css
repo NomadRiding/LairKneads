@@ -1,0 +1,51 @@
+.home-page {
+  background-color: rgb(207, 181, 131);
+  padding: 65px 0 25px 0;
+}
+
+.hero-text-container {
+  padding: 20px;
+  text-align: center; /* Center-align the text and button */
+  display: flex; /* Use flexbox for alignment */
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center elements horizontally */
+  justify-content: center; /* Center elements vertically */
+  height: 100%; /* Ensure the container takes up full height if needed */
+}
+
+.Logo-style {
+  color: #333;
+  -webkit-text-stroke: #ce9b10 2px; /* Light blue stroke for the logo */
+}
+
+.hero-text-container h1 {
+  font-size: 2.5em; /* Adjusted for better visibility */
+  margin: 0; /* Remove default margin */
+  padding: 0;
+  color: #333; /* Darker color for better contrast */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.hero-text-container button {
+  background-color: #30c5f3; /* Bright yellow for visibility */
+  color: #333; /* Dark text for contrast */
+  border: none; /* Remove default border */
+  padding: 10px 20px; /* Padding for button size */
+  font-size: 1.8em; /* Larger font size for readability */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 5px; /* Rounded corners for the button */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  margin-top: 20px; /* Add spacing between the button and other elements */
+}
+
+.hero-text-container button:hover {
+  background-color: #333; /* Darker yellow on hover */
+  color: #30c5f3;
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.hero-text-container button:focus {
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 0 4px rgba(255, 204, 0, 0.5); /* Custom focus outline */
+}

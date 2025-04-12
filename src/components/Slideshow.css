@@ -1,0 +1,54 @@
+.slideshow-container {
+  position: relative !important;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  border-radius: 10px; /* Rounded corners for the slideshow container */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  padding: 20px; /* Padding around the slideshow */
+  display: flex; /* Flexbox for alignment */
+  justify-content: center; /* Center the slideshow items */
+}
+
+.mySlides img {
+  width: 250px;
+  height: auto;
+  display: block;
+  margin: auto; /* Center the image within the slide */
+  border-radius: 10px; /* Rounded corners for the images */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for images */
+  transition: transform 0.3s ease; /* Smooth zoom effect on hover */
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%; /* Center vertically */
+  width: auto;
+  margin-top: -22px; /* Adjust for vertical centering */
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 1000; /* Ensure arrows are above other elements */
+  transition: background-color 0.3s ease;
+}
+
+.next {
+  right: 0; /* Position the "next" arrow on the right */
+  border-radius: 3px 0 0 3px;
+}
+
+.prev {
+  left: 0; /* Position the "prev" arrow on the left */
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+}
