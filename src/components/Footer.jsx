@@ -1,5 +1,8 @@
 import React from "react"
 import "./Footer.css"
+import Instagram from "../assets/InstagramBlack.png"
+import XLogo from "../assets/xlogoblack.png"
+import Tiktok from "../assets/TiktokBlack.png"
 
 function Footer() {
   return (
@@ -9,24 +12,36 @@ function Footer() {
         <p>Follow us on:</p>
         <ul className="social-media-links">
           <li>
-            <a href="#">
-              <img href="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/ac81c6976bf1467aa641072c6fef166f/tiktokblackiconlogocf54f85379seeklogocom.png"></img>
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={Instagram} alt="Instagram" />
             </a>
           </li>
           <li>
-            <a href="#">
-              <img href="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/ac81c6976bf1467aa641072c6fef166f/instagramnew2016glyphlogo84cb825424seeklogocom.png"></img>
+            <a
+              href="https://www.twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={XLogo} alt="Twitter" />
             </a>
           </li>
           <li>
-            <a href="#">
-              <img href="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/ac81c6976bf1467aa641072c6fef166f/xlogoblack.png"></img>
+            <a
+              href="https://www.tiktok.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={Tiktok} alt="TikTok" />
             </a>
           </li>
         </ul>
         <p className="disclaimer">
-          *Lair Kneads is a Cottage Food Operation all products are homemade and
-          not subject to Routine Government Food Safety Inspections{" "}
+          *Lair Kneads is a Cottage Food Operation. All products are homemade
+          and not subject to routine government food safety inspections.
         </p>
       </div>
     </footer>

@@ -11,6 +11,27 @@
   gap: 20px; /* Space between icons */
 }
 
+.social-media-links a {
+  color: white; /* White color for icons */
+  font-size: 24px; /* Icon size */
+  text-decoration: none; /* Remove underline from links */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.social-media-links a:hover {
+  color: #30c5f3; /* Change color on hover */
+}
+
+.social-media-links img {
+  width: 24px; /* Icon size */
+  height: 24px; /* Icon size */
+  transition: transform 0.3s ease; /* Smooth scale effect on hover */
+}
+
+.social-media-links img:hover {
+  transform: scale(1.2); /* Slightly enlarge the icon on hover */
+}
+
 .disclaimer {
   margin-top: 20px;
   font-size: 0.7em; /* Smaller font size for the disclaimer */
