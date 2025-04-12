@@ -14,8 +14,8 @@
 }
 
 .Logo-style {
-  color: #333;
-  -webkit-text-stroke: #ce9b10 2px; /* Light blue stroke for the logo */
+  color: #000000;
+  -webkit-text-stroke: #ce9b10 1.5px; /* Text stroke for logo */
 }
 
 .hero-text-container h1 {
