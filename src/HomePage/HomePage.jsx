@@ -3,6 +3,7 @@ import Slideshow from "../components/Slideshow"
 import "./HomePage.css"
 import HeroText from "../components/HeroText"
 import Layout from "../components/Layout"
+import Review from "../components/Review"
 
 function HomePage() {
   return (
@@ -11,6 +12,7 @@ function HomePage() {
         <HeroText />
         <Slideshow />
       </div>
+      <Review />
     </Layout>
   )
 }
