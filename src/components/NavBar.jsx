@@ -1,27 +1,28 @@
 import React from "react"
 import { useEffect, useState } from "react"
 import "./NavBar.css"
+import { Link } from "react-router-dom"
 
 function NavBar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   return (
     <nav>
-      <h1>Lair Kneads</h1>
+      <h1 className="Logo-style logo">Lair Kneads</h1>
       <ul>
         <li>
-          <a href="#home">Order</a>
+          <Link to="/Order">Order</Link>
         </li>
         <li>
-          <a href="#about">About</a>
+          <Link to="/About">About</Link>
         </li>
         <li>
-          <a href="#contact">Contact</a>
+          <Link to="/Contact">Contact</Link>
         </li>
         <li>
           {isLoggedIn ? (
-            <a href="#profile">Profile</a> // Show "Profile" if logged in
+            <Link to="/profile">Profile</Link> // Show "Profile" if logged in
           ) : (
-            <a href="#login">LogIn</a> // Show "LogIn" if not logged in
+            <Link to="/login">LogIn</Link> // Show "LogIn" if not logged in
           )}
         </li>
       </ul>
