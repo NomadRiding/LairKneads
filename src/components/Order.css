@@ -1,0 +1,45 @@
+.Order-Details {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.OrderForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #ebeeb9;
+  color: rgb(37, 35, 35);
+  padding: 20px;
+}
+
+.Order-Details span {
+  font-weight: bold;
+  color: #000000; /* Black text color for better contrast */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+input[type="text"],
+input[type="radio"] {
+  margin: 5px 0;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #30c5f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1a9ed9;
+}
