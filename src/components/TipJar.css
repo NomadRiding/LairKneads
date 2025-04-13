@@ -1,0 +1,51 @@
+.tip-jar-container {
+  background-color: #fdf5e6; /* Light cream background for a warm feel */
+  border: 2px solid #f4c542; /* Golden border to resemble a jar */
+  border-radius: 15px; /* Rounded corners for a jar-like shape */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  padding: 20px;
+  max-width: 400px;
+  margin: 20px auto; /* Center the container */
+  text-align: center;
+  font-family: "Comic Sans MS", cursive, sans-serif; /* Fun font for a playful vibe */
+}
+
+.tip-jar-container h2 {
+  font-size: 2em;
+  color: #f4c542; /* Golden color for the title */
+  margin-bottom: 10px;
+}
+
+.tip-jar-container p {
+  font-size: 1.2em;
+  color: #333; /* Darker text for readability */
+  margin: 10px 0;
+}
+
+.tip-jar-button {
+  background-color: #f4c542; /* Golden button color */
+  color: #fff; /* White text for contrast */
+  border: none;
+  border-radius: 25px; /* Rounded button for a soft look */
+  padding: 10px 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for the button */
+}
+
+.tip-jar-button:hover {
+  transform: scale(1.1); /* Slightly enlarge the button on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* More pronounced shadow on hover */
+  background-color: #e5b937; /* Slightly darker golden color on hover */
+}
+
+.tip-jar-button:active {
+  transform: scale(0.95); /* Slightly shrink the button when clicked */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduced shadow on click */
+}
+
+.tip-jar-container a {
+  text-decoration: none; /* Remove underline from the link */
+}
