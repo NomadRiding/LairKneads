@@ -21,13 +21,13 @@ function NavBar() {
         <li>
           <Link to="/Contact">Contact</Link>
         </li>
-        <li>
+        {/* <li>
           {isLoggedIn ? (
             <Link to="/profile">Profile</Link> // Show "Profile" if logged in
           ) : (
             <Link to="/login">LogIn</Link> // Show "LogIn" if not logged in
           )}
-        </li>
+        </li> */}
       </ul>
     </nav>
   )
