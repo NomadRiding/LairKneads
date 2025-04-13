@@ -4,6 +4,7 @@ import "./HomePage.css"
 import HeroText from "../components/HeroText"
 import Layout from "../components/Layout"
 import Review from "../components/Review"
+import Countdown from "../components/Countdown"
 
 function HomePage() {
   return (
@@ -12,6 +13,7 @@ function HomePage() {
         <HeroText />
         <Slideshow />
       </div>
+      <Countdown />
       <Review />
     </Layout>
   )
