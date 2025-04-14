@@ -49,3 +49,19 @@
   outline: none; /* Remove default focus outline */
   box-shadow: 0 0 0 4px rgba(255, 204, 0, 0.5); /* Custom focus outline */
 }
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .logo {
+    font-size: 1.5em; /* Reduce logo font size */
+  }
+
+  li {
+    margin-right: 10px; /* Reduce spacing between list items */
+    padding: 5px; /* Reduce padding for list items */
+  }
+
+  a {
+    font-size: 0.9em; /* Reduce font size for links */
+  }
+}

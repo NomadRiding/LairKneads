@@ -52,3 +52,19 @@
 .next:hover {
   background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
 }
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .logo {
+    font-size: 1.5em; /* Reduce logo font size */
+  }
+
+  li {
+    margin-right: 10px; /* Reduce spacing between list items */
+    padding: 5px; /* Reduce padding for list items */
+  }
+
+  a {
+    font-size: 0.9em; /* Reduce font size for links */
+  }
+}

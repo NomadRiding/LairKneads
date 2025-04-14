@@ -2,4 +2,21 @@
   display: flex;
   align-items: center;
   padding: 65px 20px 25px 10px !important;
+  font-family: "Arial", sans-serif; /* Use a clean, web-safe font */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .logo {
+    font-size: 1.5em; /* Reduce logo font size */
+  }
+
+  li {
+    margin-right: 10px; /* Reduce spacing between list items */
+    padding: 5px; /* Reduce padding for list items */
+  }
+
+  a {
+    font-size: 0.9em; /* Reduce font size for links */
+  }
 }
