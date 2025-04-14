@@ -67,3 +67,25 @@ button {
 button:hover {
   background-color: #1a9ed9;
 }
+
+iframe {
+  width: 100%; /* Make the iframe take the full width of its container */
+  height: 100vh; /* Adjust height to fit the viewport */
+  border: none; /* Remove the border for a clean look */
+  margin: 0 auto; /* Center the iframe */
+  display: block;
+}
+
+@media (max-width: 768px) {
+  iframe {
+    width: 90%; /* Reduce width slightly for better spacing on smaller screens */
+    height: 1200px; /* Adjust height for mobile devices */
+  }
+}
+
+@media (max-width: 480px) {
+  iframe {
+    width: 100%; /* Use full width for very small screens */
+    height: 1000px; /* Further adjust height for smaller devices */
+  }
+}
