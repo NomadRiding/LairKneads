@@ -13,7 +13,7 @@ function Footer() {
         <ul className="social-media-links">
           <li>
             <a
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/lair_kneads"
               target="_blank"
               rel="noopener noreferrer"
             >
