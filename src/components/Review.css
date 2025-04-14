@@ -1,45 +1,35 @@
+.headerSpace {
+  display: flex;
+  align-items: center; /* Vertically align content */
+  justify-content: flex-start; /* Align content to the left */
+  height: 100px; /* Adjust height to fit the image, name, and stars */
+  background-color: rgb(207, 181, 131); /* Match the background color */
+  padding: 10px 5px; /* Add padding for spacing */
+  gap: 10px; /* Space between the image, name, and stars */
+  border-radius: 15px; /* Rounded corners for the header space */
+}
+
 .review-page {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(207, 181, 131);
-}
-
-.reviewSquare {
-  width: 100%;
-  max-width: 800px; /* Limit the width of the review square */
-  background-color: #d4d3cc;
-  border-radius: 8px;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
-  width: 200px;
-  height: 250px;
-  margin: 20px;
-  padding: 20px;
-}
-
-.reviewText {
-  font-size: 1.1em;
-  color: #000000; /* White text color for better contrast */
-  padding: 20px;
-  text-align: center;
-  line-height: 1.5; /* Improved line height for readability */
-  overflow: hidden;
+  flex-wrap: wrap; /* Allow wrapping to the next row if there are too many reviews */
+  justify-content: center; /* Center the reviews horizontally */
+  gap: 20px; /* Add space between the review squares */
+  padding: 20px; /* Add padding around the container */
+  background-color: #fdf5e6; /* Light background for the page */
 }
 
 .profile {
   display: flex;
   align-items: center; /* Align image and details vertically */
-  margin-bottom: 10px;
-  padding: 0 20px;
+  gap: 10px; /* Space between the image and profile details */
 }
 
 .profile-image {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  margin-right: 20px; /* Add spacing between the image and details */
+  width: 60px; /* Shrink image to fit inside the header space */
+  height: 60px; /* Maintain aspect ratio */
+  border-radius: 50%; /* Circular image */
+  object-fit: cover; /* Ensure the image fits within the container */
+  object-position: center; /* Center the image */
 }
 
 .profile-details {
@@ -49,24 +39,56 @@
 }
 
 .profile-name {
-  font-size: 1.5em;
-  font-weight: bold;
-  margin-bottom: 10px; /* Add spacing below the name */
+  font-size: 1.2em; /* Adjust font size to fit within the header space */
+  margin: 0; /* Remove extra margin */
 }
 
 .starRating {
   display: flex;
-  justify-content: flex-start; /* Align stars to the left */
   gap: 5px; /* Space between stars */
-  margin-bottom: 10px; /* Add spacing below the stars */
-  padding-right: 15px;
 }
 
 .checked {
-  color: orange;
+  color: #f4c542; /* Golden color for checked stars */
+}
+.unchecked {
+  color: #000000; /* Gray color for unchecked stars */
+}
+
+.reviewSquare {
+  width: 100%;
+  max-width: 800px; /* Limit the width of the review square */
+  background-color: #d4d3cc;
+  border-radius: 8px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+  width: 180px;
+  height: 300px;
+  margin: 20px;
+  padding: 20px;
+  overflow: hidden; /* Ensure content does not overflow */
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  justify-content: space-between; /* Space out content */
 }
 
 .reviewText {
-  margin-top: 20px;
+  font-size: 1.1em;
+  color: #000000;
+  padding: 0 10px;
   text-align: center;
+  line-height: 1.2;
+  overflow: hidden; /* Prevent text from overflowing */
+  text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+  white-space: normal; /* Allow text to wrap */
+  height: 100%; /* Ensure text stays within the review square */
+}
+
+.reviewTitle {
+  font-size: 1.2em;
+  color: #000000;
+  font-weight: bold; /* Make the title bold */
+  padding: 0px;
+  margin: 0px;
+  text-align: center; /* Center the title */
+  height: 90px;
 }
