@@ -1,3 +1,32 @@
+.order-container {
+  background-color: #fdf5e6; /* Light cream background for a warm feel */
+  padding: 40px 20px;
+  border-radius: 15px; /* Rounded corners for a soft look */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  max-width: 800px;
+  margin: 20px auto; /* Center the container */
+  font-family: "Georgia", serif; /* Elegant font for a classy look */
+  color: #333; /* Dark text for readability */
+}
+
+.order-container h1 {
+  font-size: 2.5em;
+  color: #f4c542; /* Golden color for the title */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.order-container p {
+  font-size: 1.2em;
+  line-height: 1.8; /* Improved readability */
+  margin-bottom: 20px;
+}
+
+.order-container span {
+  font-weight: bold;
+  color: #c9a019; /* Highlighted text in golden color */
+}
+
 .Order-Details {
   display: flex;
   flex-direction: column;
@@ -11,11 +40,6 @@
   background-color: #ebeeb9;
   color: rgb(37, 35, 35);
   padding: 20px;
-}
-
-.Order-Details span {
-  font-weight: bold;
-  color: #000000; /* Black text color for better contrast */
 }
 
 form {

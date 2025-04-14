@@ -24,7 +24,7 @@
 
 .about-container span {
   font-weight: bold;
-  color: #f4c542; /* Highlighted text in golden color */
+  color: #c9a019; /* Highlighted text in golden color */
 }
 
 .about-container p:last-of-type {
@@ -34,3 +34,4 @@
 .about-container .tip-jar-container {
   margin-top: 20px;
 }
+
