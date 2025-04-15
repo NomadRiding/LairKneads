@@ -78,3 +78,12 @@ a:hover::after {
     font-size: 0.9em; /* Reduce font size for links */
   }
 }
+
+/* Media query for Android-specific adjustments */
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: 768px) {
+  .Logo-style {
+    -webkit-text-stroke: none; /* Disable text stroke on Android */
+    color: #ce9b10; /* Use a golden color instead */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add a shadow for depth */
+  }
+}

@@ -28,6 +28,23 @@
   color: #555; /* Medium gray for the message */
   margin-top: 10px; /* Space between timer and message */
   text-align: center; /* Centered text for the message */
-  font-family: digital,  /* Digital font for a techy look */
+  font-family: digital; /* Digital font for a techy look */
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .countdown-timer {
+    font-size: 1.5rem; /* Smaller font size for mobile devices */
+    padding: 10px; /* Reduced padding for mobile devices */
+  }
+  .countdown-timer span {
+    font-size: 1.2em; /* Smaller font size for spans on mobile */
+  }
+  .countdown-timer p {
+    font-size: 1.5em; /* Smaller font size for message on mobile */
+  }
+  .countdown-timer .label {
+    font-size: 0.4em; /* Smaller font size for labels on mobile */
+  }
 }

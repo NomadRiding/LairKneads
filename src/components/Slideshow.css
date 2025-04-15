@@ -55,8 +55,9 @@
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {
-  .logo {
-    font-size: 1.5em; /* Reduce logo font size */
+  .mySlides img {
+    width: 100%; /* Full width for smaller screens */
+    height: auto; /* Maintain aspect ratio */
   }
 
   li {
