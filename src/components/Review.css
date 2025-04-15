@@ -92,3 +92,22 @@
   text-align: center; /* Center the title */
   height: 90px;
 }
+
+@media (max-width: 768px) {
+  .review-page {
+    display: flex;
+    flex-direction: column; /* Stack reviews vertically */
+    align-items: center; /* Center the single review */
+    overflow: hidden; /* Hide other reviews */
+  }
+
+  .reviewSquare {
+    width: 60%; /* Make the review square take up most of the screen width */
+    max-width: 400px; /* Limit the maximum width */
+    margin: 0 auto 20px auto; /* Center the review and add spacing below */
+  }
+
+  .reviewSquare:nth-child(n + 2) {
+    display: none; /* Hide all reviews except the first one */
+  }
+}
