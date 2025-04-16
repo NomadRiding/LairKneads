@@ -15,7 +15,7 @@
   justify-content: center; /* Center the reviews horizontally */
   gap: 20px; /* Add space between the review squares */
   padding: 20px; /* Add padding around the container */
-  background-color: #fdf5e6; /* Light background for the page */
+  background-color: #F4D35E; /* Light background for the page */
 }
 
 .profile {
@@ -51,6 +51,7 @@
 .checked {
   color: #f4c542; /* Golden color for checked stars */
 }
+
 .unchecked {
   color: #000000; /* Gray color for unchecked stars */
 }
@@ -58,7 +59,6 @@
 .reviewSquare {
   flex: 1 1 calc(33.33% - 40px); /* Responsive width for review squares */
   max-width: calc(33.33% - 40px); /* Ensure max width is responsive */
-  max-width: 800px; /* Limit the width of the review square */
   background-color: #d4d3cc;
   border-radius: 8px;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
@@ -98,12 +98,12 @@
   transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
+/* Media query for phones (smaller screens) */
 @media (max-width: 768px) {
   .review-page {
     display: flex;
     flex-direction: column; /* Stack reviews vertically */
     align-items: center; /* Center the single review */
-    overflow: hidden; /* Hide other reviews */
   }
 
   .reviewSquare {
@@ -117,9 +117,15 @@
   }
 }
 
-@media (min-width: 780px) {
+/* Media query for tablets and larger screens */
+@media (min-width: 768px) {
   .reviewSquare {
+    display: flex; /* Ensure all reviews are displayed */
     flex: 1 1 calc(33.33% - 40px); /* Responsive width for review squares */
     max-width: calc(33.33% - 40px); /* Ensure max width is responsive */
+  }
+
+  .reviewSquare:nth-child(n + 2) {
+    display: flex; /* Ensure all reviews are displayed on larger screens */
   }
 }

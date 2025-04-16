@@ -4,7 +4,7 @@
   align-items: center;
   flex-direction: column; /* Stack items vertically */
   font-family: "Courier New", Courier, monospace; /* Monospace font for a techy look */
-  background-color: #f0f0f0; /* Light background for contrast */
+  background-color: #f0ead4; /* Light background for contrast */
   border-radius: 10px; /* Rounded corners for a modern look */
   padding: 20px; /* Padding for spacing */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */

@@ -1,5 +1,5 @@
 .home-page {
-  background-color: rgb(207, 181, 131);
+  background-color: #f4d35e;
   padding: 65px 0 25px 0;
 }
 
@@ -14,7 +14,7 @@
 }
 
 .Logo-style {
-  color: #000000;
+  color: #3b302a;
   -webkit-text-stroke: #ce9b10 1.5px; /* Text stroke for logo */
 }
 
@@ -27,8 +27,8 @@
 }
 
 .hero-text-container button {
-  background-color: #30c5f3; /* Bright yellow for visibility */
-  color: #333; /* Dark text for contrast */
+  background-color: #a97155; /* Bright yellow for visibility */
+  color: #FF8e7; /* Dark text for contrast */
   border: none; /* Remove default border */
   padding: 10px 20px; /* Padding for button size */
   font-size: 1.8em; /* Larger font size for readability */
