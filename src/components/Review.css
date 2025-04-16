@@ -56,7 +56,8 @@
 }
 
 .reviewSquare {
-  width: 100%;
+  flex: 1 1 calc(33.33% - 40px); /* Responsive width for review squares */
+  max-width: calc(33.33% - 40px); /* Ensure max width is responsive */
   max-width: 800px; /* Limit the width of the review square */
   background-color: #d4d3cc;
   border-radius: 8px;
@@ -93,6 +94,10 @@
   height: 90px;
 }
 
+.reviewSquare:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
 @media (max-width: 768px) {
   .review-page {
     display: flex;
@@ -102,12 +107,19 @@
   }
 
   .reviewSquare {
-    width: 60%; /* Make the review square take up most of the screen width */
-    max-width: 400px; /* Limit the maximum width */
+    flex: 1 1 100%; /* Full width for mobile devices */
+    max-width: 100%; /* Ensure max width is 100% */
     margin: 0 auto 20px auto; /* Center the review and add spacing below */
   }
 
   .reviewSquare:nth-child(n + 2) {
     display: none; /* Hide all reviews except the first one */
+  }
+}
+
+@media (min-width: 780px) {
+  .reviewSquare {
+    flex: 1 1 calc(33.33% - 40px); /* Responsive width for review squares */
+    max-width: calc(33.33% - 40px); /* Ensure max width is responsive */
   }
 }
