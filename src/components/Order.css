@@ -4,6 +4,8 @@
   border-radius: 15px; /* Rounded corners for a soft look */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
   max-width: 800px;
+  width: 90%; /* Responsive width */
+  height: auto; /* Auto height to fit content */
   margin: 20px auto; /* Center the container */
   font-family: "Georgia", serif; /* Elegant font for a classy look */
   color: #333; /* Dark text for readability */

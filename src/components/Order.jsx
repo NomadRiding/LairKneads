@@ -51,7 +51,7 @@ function Order() {
           <button type="submit">Submit</button>
         </form>
       </div> */}
-        <iframe
+        {/* <iframe
           src="https://docs.google.com/forms/d/e/1FAIpQLSdMlDWH9U64FMpd3fk79veBhdIa6jMeUK0LV9G6yKUzfzgGRQ/viewform?embedded=true"
           width="640"
           height="1700"
@@ -66,7 +66,18 @@ function Order() {
           }}
         >
           Loading…
-        </iframe>
+        </iframe> */}
+
+        <iframe
+          src="https://tally.so/embed/wzb4P0?alignLeft=1&transparentBackground=1&dynamicHeight=1"
+          loading="lazy"
+          width="100%"
+          height="1000px"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="Order Form"
+        ></iframe>
       </div>
     </Layout>
   )
