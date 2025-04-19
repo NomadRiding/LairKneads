@@ -15,7 +15,7 @@
   justify-content: center; /* Center the reviews horizontally */
   gap: 20px; /* Add space between the review squares */
   padding: 20px; /* Add padding around the container */
-  background-color: #F4D35E; /* Light background for the page */
+  background-color: #f4d35e; /* Light background for the page */
 }
 
 .profile {
@@ -89,6 +89,7 @@
   color: #000000;
   font-weight: bold; /* Make the title bold */
   padding: 0px;
+  padding-top: 10px;
   margin: 0px;
   text-align: center; /* Center the title */
   height: 90px;

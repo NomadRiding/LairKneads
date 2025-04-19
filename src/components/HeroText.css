@@ -14,8 +14,9 @@
 }
 
 .Logo-style {
-  color: #3b302a;
-  -webkit-text-stroke: #ce9b10 1.5px; /* Text stroke for logo */
+  color: #ce9b10; /* Dark color for the logo text */
+  font-size: 1.2em; /* Adjusted font size for better visibility */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
 .hero-text-container h1 {
@@ -28,7 +29,7 @@
 
 .hero-text-container button {
   background-color: #a97155; /* Bright yellow for visibility */
-  color: #FF8e7; /* Dark text for contrast */
+  color: #fff8e7; /* Dark text for contrast */
   border: none; /* Remove default border */
   padding: 10px 20px; /* Padding for button size */
   font-size: 1.8em; /* Larger font size for readability */
@@ -71,6 +72,12 @@
   .Logo-style {
     -webkit-text-stroke: none; /* Disable text stroke on Android */
     color: #ce9b10; /* Use a golden color instead */
+    font-size: 1em;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add a shadow for depth */
+  }
+
+  .hero-text-container button {
+    font-size: 1.5em; /* Adjusted font size for better visibility on Android */
+    padding: 8px 16px; /* Adjusted padding for Android devices */
   }
 }

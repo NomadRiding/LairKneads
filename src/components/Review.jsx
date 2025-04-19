@@ -8,6 +8,7 @@ function Review() {
       image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIEA2_vTW1kjFz5W0otnsEBJrXXMI5SYi2KQ&s",
       title: "Chocolate Craving Crusher",
+      rating: 5,
       text: "The Chocolate banana bread is dangerously good. Rich, soft, and gone in one sitting.",
     },
     {
