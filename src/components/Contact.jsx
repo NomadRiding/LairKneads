@@ -1,11 +1,11 @@
 import React from "react"
 import Layout from "./Layout"
+import Roulette from "./Roulette"
 
 function Contact() {
   return (
     <Layout>
-      <h1>Contact Page</h1>
-      <p>Welcome to the Contact page!</p>
+      <Roulette />
     </Layout>
   )
 }

@@ -48,12 +48,13 @@
   gap: 5px; /* Space between stars */
 }
 
-.checked {
-  color: #f4c542; /* Golden color for checked stars */
+.fa-star {
+  font-size: 1.2em;
+  color: #ccc; /* Default color for unchecked stars */
 }
 
-.unchecked {
-  color: #000000; /* Gray color for unchecked stars */
+.fa-star.checked {
+  color: #f4c542; /* Golden color for checked stars */
 }
 
 .reviewSquare {

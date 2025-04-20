@@ -51,11 +51,14 @@ function Review() {
             <div className="profile-details">
               <h2 className="profile-name">{currentReview.name}</h2>
               <div className="starRating">
-                <span className="fa fa-star checked"></span>
-                <span className="fa fa-star checked"></span>
-                <span className="fa fa-star checked"></span>
-                <span className="fa fa-star checked"></span>
-                <span className="fa fa-star checked"></span>
+                {[...Array(5)].map((_, index) => (
+                  <span
+                    key={index}
+                    className={`fa fa-star ${
+                      index < currentReview.rating ? "checked" : ""
+                    }`}
+                  ></span>
+                ))}
               </div>
             </div>
           </div>
