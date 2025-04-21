@@ -7,42 +7,11 @@ function Roulette() {
   const [spinAngle, setSpinAngle] = React.useState(0)
 
   const names = [
-    "Zero",
-    "Tony",
-    "Jason",
-    "Alice",
-    "Bob",
-    "Charlie",
-    "Diana",
-    "Eve",
-    "Frank",
-    "Grace",
-    "Hank",
-    "Ivy",
-    "Jack",
-    "Karen",
-    "Leo",
-    "Mona",
-    "Nina",
-    "Oscar",
-    "Paul",
-    "Quinn",
-    "Rachel",
-    "Steve",
-    "Tina",
-    "Uma",
-    "Victor",
-    "Wendy",
-    "Xander",
-    "Yara",
-    "Zane",
-    "Amy",
-    "Brian",
-    "Cathy",
-    "David",
-    "Ella",
-    "Fiona",
-  ]
+    { name: "Alice", style: { backgroundColor: "red" } },
+    { name: "John", style: { backgroundColor: "purple" } },
+    { name: "Sam", style: { backgroundColor: "blue" } },
+    { name: "Kim", style: { backgroundColor: "green" } },
+  ] // List of participants with styles
 
   const handleSpin = () => {
     if (isSpinning) return // Prevent multiple spins at the same time
@@ -51,14 +20,18 @@ function Roulette() {
 
     // Randomize spin angle
     const randomSpin = Math.floor(Math.random() * 360) + 720 // At least 2 full rotations
-    setSpinAngle((prevAngle) => prevAngle + randomSpin)
+    const totalAngle = spinAngle + randomSpin
+
+    setSpinAngle(totalAngle)
 
     // Determine the result after the spin
     setTimeout(() => {
+      const normalizedAngle = totalAngle % 360 // Normalize the angle to 0-360 degrees
+      const segmentAngle = 360 / names.length // Angle per segment
       const resultIndex = Math.floor(
-        ((spinAngle + randomSpin) % 360) / (360 / names.length)
-      )
-      setSpinResult(names[resultIndex])
+        ((360 - normalizedAngle + segmentAngle / 2) % 360) / segmentAngle
+      ) // Calculate the index
+      setSpinResult(names[resultIndex].name) // Use the `name` property
       setIsSpinning(false)
     }, 3000) // Spin duration in milliseconds
   }
@@ -70,23 +43,48 @@ function Roulette() {
         Welcome to the Roulette game! Spin the wheel and see where it lands.
         Good luck!
       </p>
-      <div className="roulette-wheel">
-        <div className="wheel" style={{ transform: `rotate(${spinAngle}deg)` }}>
-          {names.map((name, index) => (
-            <div key={index} className={`number number-${index}`}>
-              {name}
+      <div className="legend">
+        <h3>Participants</h3>
+        <ul>
+          {names.map((participant, index) => (
+            <li key={index}>{participant.name}</li>
+          ))}
+        </ul>
+      </div>
+      <div className="roulette-wrapper">
+        <div
+          className="roulette-wheel"
+          style={{ transform: `rotate(${spinAngle}deg)` }}
+        >
+          {names.map((participant, index) => (
+            <div
+              key={index}
+              className="wheel-segment"
+              style={{
+                transform: `rotate(${(360 / names.length) * index}deg)`,
+                ...participant.style, // Apply the background color from the `style` property
+              }}
+            >
+              <span
+                style={{
+                  transform: `rotate(-${(360 / names.length) * index}deg)`,
+                }}
+              >
+                {participant.name}
+              </span>
             </div>
           ))}
         </div>
-        {spinResult && <div className="result">{`Result: ${spinResult}`}</div>}
+        <div className="arrow"></div>
+        <button
+          className="spin-button"
+          onClick={handleSpin}
+          disabled={isSpinning}
+        >
+          Spin!
+        </button>
       </div>
-      <button
-        className="spin-button"
-        onClick={handleSpin}
-        disabled={isSpinning}
-      >
-        Spin the Wheel!
-      </button>
+      {spinResult && <div className="result">{`Result: ${spinResult}`}</div>}
     </div>
   )
 }

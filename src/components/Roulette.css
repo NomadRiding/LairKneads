@@ -1,61 +1,95 @@
 .roulette-container {
   text-align: center;
-  margin: 20px;
+  margin: 30px;
+}
+
+.roulette-wrapper {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  border-radius: 50%; /* Ensures the wheel is circular */
+  border: 4px solid black; /* Outer border */
+  overflow: hidden; /* Prevent overflow outside the circle */
 }
 
 .roulette-wheel {
-  position: relative;
-  width: 300px;
-  height: 300px;
-  border: 5px solid #333;
+  position: absolute;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  margin: 20px auto;
+  transform-origin: center;
+  transition: transform 3s cubic-bezier(0.25, 0.1, 0.25, 1); /* Smooth spin animation */
+}
+
+.wheel-segment {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-origin: 50% 50%; /* Rotate around the center */
+  clip-path: polygon(
+    50% 50%,
+    100% 0,
+    100% 100%,
+    0 100%
+  ); /* Proper pie slice shape */
+}
+
+.wheel-segment:last-child {
   overflow: hidden;
 }
 
-.wheel {
+.wheel-segment span {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  transform-origin: center;
-  transition: transform ease-out;
-}
-
-.result {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.number {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  line-height: 50px;
-  border-radius: 50%;
-  background-color: #f4d35e;
-  color: #333;
+  top: 10%; /* Move closer to the outer edge */
+  left: 50%;
+  transform: translate(-50%, 0) rotate(-90deg); /* Align text to face inward */
+  transform-origin: center; /* Ensure rotation is centered */
+  font-size: 14px;
   font-weight: bold;
+  color: #333;
+  text-align: center;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.arrow {
+  position: absolute;
+  top: -20px; /* Position above the wheel */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid black; /* Arrow pointing inward */
+  z-index: 10; /* Ensure the arrow is above the wheel */
 }
 
 .spin-button {
-  padding: 10px 20px;
-  font-size: 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
   background-color: #f4c542;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 50%; /* Make the button circular */
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  z-index: 5; /* Ensure the button is above the wheel */
 }
 
 .spin-button:hover {
   background-color: #e5b937;
+}
+
+.result {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
 }
