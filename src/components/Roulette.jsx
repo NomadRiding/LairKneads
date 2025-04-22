@@ -1,90 +1,52 @@
-import React from "react"
-import "./Roulette.css" // Import the CSS file for styling
+import React, { useState } from "react"
+import "./Roulette.css"
 
 function Roulette() {
-  const [spinResult, setSpinResult] = React.useState(null)
-  const [isSpinning, setIsSpinning] = React.useState(false)
-  const [spinAngle, setSpinAngle] = React.useState(0)
-
-  const names = [
-    { name: "Alice", style: { backgroundColor: "red" } },
-    { name: "John", style: { backgroundColor: "purple" } },
-    { name: "Sam", style: { backgroundColor: "blue" } },
-    { name: "Kim", style: { backgroundColor: "green" } },
-  ] // List of participants with styles
+  const [names, setNames] = useState(["Tony", "Jason", "Alice", "Bob"]) // Default names
+  const [isSpinning, setIsSpinning] = useState(false)
+  const [winner, setWinner] = useState(null)
 
   const handleSpin = () => {
-    if (isSpinning) return // Prevent multiple spins at the same time
+    if (isSpinning) return
 
     setIsSpinning(true)
+    setWinner(null)
 
-    // Randomize spin angle
-    const randomSpin = Math.floor(Math.random() * 360) + 720 // At least 2 full rotations
-    const totalAngle = spinAngle + randomSpin
+    // Randomly select a name
+    const randomIndex = Math.floor(Math.random() * names.length)
+    const chosenName = names[randomIndex]
 
-    setSpinAngle(totalAngle)
-
-    // Determine the result after the spin
+    // Spin animation duration
     setTimeout(() => {
-      const normalizedAngle = totalAngle % 360 // Normalize the angle to 0-360 degrees
-      const segmentAngle = 360 / names.length // Angle per segment
-      const resultIndex = Math.floor(
-        ((360 - normalizedAngle + segmentAngle / 2) % 360) / segmentAngle
-      ) // Calculate the index
-      setSpinResult(names[resultIndex].name) // Use the `name` property
       setIsSpinning(false)
-    }, 3000) // Spin duration in milliseconds
+      setWinner(chosenName)
+    }, 3000) // Spin duration
   }
 
   return (
-    <div className="roulette-container">
-      <h1>Roulette</h1>
-      <p className="Roulette-Details">
-        Welcome to the Roulette game! Spin the wheel and see where it lands.
-        Good luck!
-      </p>
-      <div className="legend">
-        <h3>Participants</h3>
-        <ul>
-          {names.map((participant, index) => (
-            <li key={index}>{participant.name}</li>
-          ))}
-        </ul>
-      </div>
-      <div className="roulette-wrapper">
+    <div className="spinner-container">
+      {winner && <h2 className="winner-message">{`${winner} has won!`}</h2>}
+      <div className="square">
         <div
-          className="roulette-wheel"
-          style={{ transform: `rotate(${spinAngle}deg)` }}
+          className={`name-container ${isSpinning ? "spinning" : ""}`}
+          style={{ justifyContent: winner ? "center" : "flex-start" }}
         >
-          {names.map((participant, index) => (
-            <div
-              key={index}
-              className="wheel-segment"
-              style={{
-                transform: `rotate(${(360 / names.length) * index}deg)`,
-                ...participant.style, // Apply the background color from the `style` property
-              }}
-            >
-              <span
-                style={{
-                  transform: `rotate(-${(360 / names.length) * index}deg)`,
-                }}
-              >
-                {participant.name}
-              </span>
-            </div>
-          ))}
+          {isSpinning
+            ? [...names, ...names].map((name, index) => (
+                <div key={index} className="name">
+                  {name}
+                </div>
+              ))
+            : winner && <div className="name winner-name">{winner}</div>}
         </div>
-        <div className="arrow"></div>
-        <button
-          className="spin-button"
-          onClick={handleSpin}
-          disabled={isSpinning}
-        >
-          Spin!
-        </button>
       </div>
-      {spinResult && <div className="result">{`Result: ${spinResult}`}</div>}
+      <button
+        onClick={handleSpin}
+        className="spin-button"
+        disabled={isSpinning}
+      >
+        Spin
+      </button>
     </div>
   )
 }
