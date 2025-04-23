@@ -44,6 +44,20 @@ function Footer() {
           and not subject to routine government food safety inspections.
         </p>
       </div>
+      <div className="linkables">
+        <a href="/privacy-policy" className="linkable-item">
+          Privacy Policy
+        </a>
+        <a href="/terms-of-service" className="linkable-item">
+          Terms of Service
+        </a>
+        <a href="/contact-us" className="linkable-item">
+          Contact Us
+        </a>
+        <a href="/Recipes" className="linkable-item">
+          Recipes
+        </a>
+      </div>
     </footer>
   )
 }

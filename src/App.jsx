@@ -6,6 +6,7 @@ import Contact from "./components/Contact"
 import Profile from "./components/Profile"
 import Login from "./components/Login"
 import HomePage from "./HomePage/HomePage"
+import Recipes from "./components/Recipes"
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path="/profile" element={<Profile />} />
       <Route path="/login" element={<Login />} />
       <Route path="/" element={<HomePage />} />
+      <Route path="/Recipes" element={<Recipes />} />
     </Routes>
   )
 }
