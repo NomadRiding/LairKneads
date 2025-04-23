@@ -2,9 +2,19 @@ import React, { useState } from "react"
 import "./Roulette.css"
 
 function Roulette() {
-  const [names, setNames] = useState(["Tony", "Jason", "Alice", "Bob"]) // Default names
   const [isSpinning, setIsSpinning] = useState(false)
   const [winner, setWinner] = useState(null)
+
+  const names = [
+    "Alice",
+    "Bob",
+    "Charlie",
+    "David",
+    "Eve",
+    "Frank",
+    "Grace",
+    "Helen",
+  ]
 
   const handleSpin = () => {
     if (isSpinning) return

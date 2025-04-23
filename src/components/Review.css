@@ -39,7 +39,7 @@
 }
 
 .profile-name {
-  font-size: 1.2em; /* Adjust font size to fit within the header space */
+  font-size: 1.1em; /* Adjust font size to fit within the header space */
   margin: 0; /* Remove extra margin */
 }
 
@@ -50,6 +50,7 @@
 
 .fa-star {
   font-size: 1.2em;
+  padding-top: 20px;
   color: #ccc; /* Default color for unchecked stars */
 }
 
@@ -58,7 +59,7 @@
 }
 
 .reviewSquare {
-  flex: 1 1 calc(33.33% - 40px); /* Responsive width for review squares */
+  flex: 1 1 calc(33.33% - 40px); /* Responsive width for three reviews per row */
   max-width: calc(33.33% - 40px); /* Ensure max width is responsive */
   background-color: #d4d3cc;
   border-radius: 8px;
@@ -103,31 +104,79 @@
 /* Media query for phones (smaller screens) */
 @media (max-width: 768px) {
   .review-page {
-    display: flex;
     flex-direction: column; /* Stack reviews vertically */
-    align-items: center; /* Center the single review */
+    align-items: center; /* Center the reviews */
   }
 
   .reviewSquare {
     flex: 1 1 100%; /* Full width for mobile devices */
     max-width: 100%; /* Ensure max width is 100% */
     margin: 0 auto 20px auto; /* Center the review and add spacing below */
+    height: auto;
   }
 
-  .reviewSquare:nth-child(n + 2) {
-    display: none; /* Hide all reviews except the first one */
+  .reviewText {
+    font-size: 1em; /* Adjust font size for smaller screens */
+    padding: 0 5px; /* Reduce padding for smaller screens */
+    line-height: 1.4; /* Increase line height for readability */
+  }
+
+  .reviewTitle {
+    font-size: 1.2em; /* Adjust title size for smaller screens */
+    padding: 0px;
+    padding-top: 10px;
+    margin: 0px;
+    text-align: center; /* Center the title */
+    height: auto; /* Allow height to adjust based on content */
+  }
+
+  .headerSpace {
+    flex-direction: column; /* Stack image and details vertically */
+    align-items: center; /* Center the content */
+    height: auto; /* Allow height to adjust based on content */
+    padding: 10px; /* Add padding for spacing */
   }
 }
 
 /* Media query for tablets and larger screens */
 @media (min-width: 768px) {
-  .reviewSquare {
-    display: flex; /* Ensure all reviews are displayed */
-    flex: 1 1 calc(33.33% - 40px); /* Responsive width for review squares */
-    max-width: calc(33.33% - 40px); /* Ensure max width is responsive */
+  .review-page {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for multiple rows */
+    justify-content: center; /* Center the reviews horizontally */
   }
 
-  .reviewSquare:nth-child(n + 2) {
-    display: flex; /* Ensure all reviews are displayed on larger screens */
+  .reviewSquare {
+    flex: 1 1 calc(33.33% - 40px); /* Responsive width for three reviews per row */
+    max-width: calc(33.33% - 40px); /* Ensure max width is responsive */
+    margin: 20px; /* Add spacing between reviews */
+  }
+
+  .reviewText {
+    font-size: 1.1em; /* Adjust font size for larger screens */
+    padding: 0 10px; /* Add padding for spacing */
+    line-height: 1.2; /* Adjust line height for readability */
+  }
+  .reviewTitle {
+    font-size: 1.2em; /* Adjust title size for larger screens */
+    padding: 0px;
+    padding-top: 10px;
+    margin: 0px;
+    text-align: center; /* Center the title */
+    height: 90px; /* Set a fixed height for the title */
+  }
+  .headerSpace {
+    flex-direction: row; /* Align image and details in a row */
+    align-items: center; /* Center the content vertically */
+    height: 100px; /* Set a fixed height for the header space */
+    padding: 10px 5px; /* Add padding for spacing */
+  }
+
+  .profile-image {
+    width: 60px; /* Set a fixed width for the profile image */
+    height: 60px; /* Set a fixed height for the profile image */
+    border-radius: 50%; /* Circular image */
+    object-fit: cover; /* Ensure the image fits within the container */
+    object-position: center; /* Center the image */
   }
 }

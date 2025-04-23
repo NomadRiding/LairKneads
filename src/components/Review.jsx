@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import "./Review.css" // Import the CSS file for styling
+import Chef from "../assets/BananaChef.png" // Import the image for the chef
 
 function Review() {
   const reviews = [
@@ -23,6 +24,12 @@ function Review() {
         "https://media.istockphoto.com/id/1335941248/photo/shot-of-a-handsome-young-man-standing-against-a-grey-background.jpg?s=612x612&w=0&k=20&c=JSBpwVFm8vz23PZ44Rjn728NwmMtBa_DYL7qxrEWr38=",
       title: "Spicy Surprise",
       text: "Didn't expect to love Jalapeno banana bread, but wow! It's my new fav combo. Perfect sweet heat.",
+    },
+    {
+      name: "Albert F",
+      image: Chef,
+      title: "Banana Bread Guru",
+      text: "I thought I knew banana bread until I tried this. The flavors are on another level!",
     },
   ]
 
@@ -50,18 +57,18 @@ function Review() {
             />
             <div className="profile-details">
               <h2 className="profile-name">{currentReview.name}</h2>
-              <div className="starRating">
-                {[...Array(5)].map((_, index) => (
-                  <span
-                    key={index}
-                    className={`fa fa-star ${
-                      index < currentReview.rating ? "checked" : ""
-                    }`}
-                  ></span>
-                ))}
-              </div>
             </div>
-          </div>
+          </div>{" "}
+        </div>
+        <div className="starRating">
+          {[...Array(5)].map((_, index) => (
+            <span
+              key={index}
+              className={`fa fa-star ${
+                index < currentReview.rating ? "checked" : ""
+              }`}
+            ></span>
+          ))}
         </div>
         <p className="reviewTitle">
           <strong>{currentReview.title}</strong>
