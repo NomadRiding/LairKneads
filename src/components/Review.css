@@ -1,182 +1,86 @@
-.headerSpace {
+.testimonial-container {
+  background: linear-gradient(135deg, #fffbe6, #ffe3b3);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  position: relative;
+  max-width: 100%;
+  transition: all 0.3s ease;
+}
+
+.testimonial-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* Star rating styling */
+.testimonial-stars {
   display: flex;
-  align-items: center; /* Vertically align content */
-  justify-content: flex-start; /* Align content to the left */
-  height: 100px; /* Adjust height to fit the image, name, and stars */
-  background-color: rgb(207, 181, 131); /* Match the background color */
-  padding: 10px 5px; /* Add padding for spacing */
-  gap: 10px; /* Space between the image, name, and stars */
-  border-radius: 15px; /* Rounded corners for the header space */
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
-.review-page {
-  display: flex;
-  flex-wrap: wrap; /* Allow wrapping to the next row if there are too many reviews */
-  justify-content: center; /* Center the reviews horizontally */
-  gap: 20px; /* Add space between the review squares */
-  padding: 20px; /* Add padding around the container */
-  background-color: #f4d35e; /* Light background for the page */
+.testimonial-stars .w-5 {
+  width: 20px;
+  height: 20px;
+  margin: 0 2px;
+  fill: #f4c542; /* Golden color for stars */
 }
 
-.profile {
-  display: flex;
-  align-items: center; /* Align image and details vertically */
-  gap: 10px; /* Space between the image and profile details */
+.testimonial-text {
+  font-style: italic;
+  color: #4b5563;
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
-.profile-image {
-  width: 60px; /* Shrink image to fit inside the header space */
-  height: 60px; /* Maintain aspect ratio */
-  border-radius: 50%; /* Circular image */
-  object-fit: cover; /* Ensure the image fits within the container */
-  object-position: center; /* Center the image */
+.testimonial-author {
+  color: #6b7280;
+  font-weight: 500;
+  font-size: 0.9rem;
 }
 
-.profile-details {
-  display: flex;
-  flex-direction: column; /* Stack name and stars vertically */
-  align-items: flex-start; /* Align name and stars to the left */
+.testimonial-flavor {
+  color: #92400e;
+  font-weight: bold;
 }
 
-.profile-name {
-  font-size: 1.1em; /* Adjust font size to fit within the header space */
-  margin: 0; /* Remove extra margin */
+.carousel-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #9ca3af;
+  transition: color 0.2s ease;
 }
 
-.starRating {
-  display: flex;
-  gap: 5px; /* Space between stars */
+.button-left {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+.button-right {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
 }
 
-.fa-star {
-  font-size: 1.2em;
-  padding-top: 20px;
-  color: #ccc; /* Default color for unchecked stars */
+.carousel-button:hover {
+  color: #facc15;
 }
 
-.fa-star.checked {
-  color: #f4c542; /* Golden color for checked stars */
-}
-
-.reviewSquare {
-  flex: 1 1 calc(33.33% - 40px); /* Responsive width for three reviews per row */
-  max-width: calc(33.33% - 40px); /* Ensure max width is responsive */
-  background-color: #d4d3cc;
-  border-radius: 8px;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
-  width: 180px;
-  height: 300px;
-  margin: 20px;
-  padding: 20px;
-  overflow: hidden; /* Ensure content does not overflow */
-  display: flex;
-  flex-direction: column; /* Stack content vertically */
-  justify-content: space-between; /* Space out content */
-}
-
-.reviewText {
-  font-size: 1.1em;
-  color: #000000;
-  padding: 0 10px;
+.carousel-wrapper {
+  padding: 2.5rem 1rem;
   text-align: center;
-  line-height: 1.2;
-  overflow: hidden; /* Prevent text from overflowing */
-  text-overflow: ellipsis; /* Add ellipsis for overflowing text */
-  white-space: normal; /* Allow text to wrap */
-  height: 100%; /* Ensure text stays within the review square */
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.reviewTitle {
-  font-size: 1.2em;
-  color: #000000;
-  font-weight: bold; /* Make the title bold */
-  padding: 0px;
-  padding-top: 10px;
-  margin: 0px;
-  text-align: center; /* Center the title */
-  height: 90px;
-}
-
-.reviewSquare:hover {
-  transform: scale(1.05); /* Slightly enlarge on hover */
-}
-
-/* Media query for phones (smaller screens) */
-@media (max-width: 768px) {
-  .review-page {
-    flex-direction: column; /* Stack reviews vertically */
-    align-items: center; /* Center the reviews */
-  }
-
-  .reviewSquare {
-    flex: 1 1 100%; /* Full width for mobile devices */
-    max-width: 100%; /* Ensure max width is 100% */
-    margin: 0 auto 20px auto; /* Center the review and add spacing below */
-    height: auto;
-  }
-
-  .reviewText {
-    font-size: 1em; /* Adjust font size for smaller screens */
-    padding: 0 5px; /* Reduce padding for smaller screens */
-    line-height: 1.4; /* Increase line height for readability */
-  }
-
-  .reviewTitle {
-    font-size: 1.2em; /* Adjust title size for smaller screens */
-    padding: 0px;
-    padding-top: 10px;
-    margin: 0px;
-    text-align: center; /* Center the title */
-    height: auto; /* Allow height to adjust based on content */
-  }
-
-  .headerSpace {
-    flex-direction: column; /* Stack image and details vertically */
-    align-items: center; /* Center the content */
-    height: auto; /* Allow height to adjust based on content */
-    padding: 10px; /* Add padding for spacing */
-  }
-}
-
-/* Media query for tablets and larger screens */
-@media (min-width: 768px) {
-  .review-page {
-    display: flex;
-    flex-wrap: wrap; /* Allow wrapping for multiple rows */
-    justify-content: center; /* Center the reviews horizontally */
-  }
-
-  .reviewSquare {
-    flex: 1 1 calc(33.33% - 40px); /* Responsive width for three reviews per row */
-    max-width: calc(33.33% - 40px); /* Ensure max width is responsive */
-    margin: 20px; /* Add spacing between reviews */
-  }
-
-  .reviewText {
-    font-size: 1.1em; /* Adjust font size for larger screens */
-    padding: 0 10px; /* Add padding for spacing */
-    line-height: 1.2; /* Adjust line height for readability */
-  }
-  .reviewTitle {
-    font-size: 1.2em; /* Adjust title size for larger screens */
-    padding: 0px;
-    padding-top: 10px;
-    margin: 0px;
-    text-align: center; /* Center the title */
-    height: 90px; /* Set a fixed height for the title */
-  }
-  .headerSpace {
-    flex-direction: row; /* Align image and details in a row */
-    align-items: center; /* Center the content vertically */
-    height: 100px; /* Set a fixed height for the header space */
-    padding: 10px 5px; /* Add padding for spacing */
-  }
-
-  .profile-image {
-    width: 60px; /* Set a fixed width for the profile image */
-    height: 60px; /* Set a fixed height for the profile image */
-    border-radius: 50%; /* Circular image */
-    object-fit: cover; /* Ensure the image fits within the container */
-    object-position: center; /* Center the image */
-  }
+.carousel-title {
+  color: #b45309;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
 }

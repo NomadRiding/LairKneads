@@ -3,7 +3,7 @@ import Slideshow from "../components/Slideshow"
 import "./HomePage.css"
 import HeroText from "../components/HeroText"
 import Layout from "../components/Layout"
-import Review from "../components/Review"
+import TestimonialCarousel from "../components/Review"
 import Countdown from "../components/Countdown"
 
 function HomePage() {
@@ -14,7 +14,7 @@ function HomePage() {
         <Slideshow />
       </div>
       <Countdown />
-      <Review />
+      <TestimonialCarousel />
     </Layout>
   )
 }

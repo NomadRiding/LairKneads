@@ -1,84 +1,78 @@
-import React, { useState, useEffect } from "react"
-import "./Review.css" // Import the CSS file for styling
-import Chef from "../assets/BananaChef.png" // Import the image for the chef
+import { useState } from "react"
+import { ChevronLeft, ChevronRight, Star } from "lucide-react"
+import "./review.css"
 
-function Review() {
-  const reviews = [
-    {
-      name: "Alyssa R.",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIEA2_vTW1kjFz5W0otnsEBJrXXMI5SYi2KQ&s",
-      title: "Chocolate Craving Crusher",
-      rating: 5,
-      text: "The Chocolate banana bread is dangerously good. Rich, soft, and gone in one sitting.",
-    },
-    {
-      name: "Camille D.",
-      image: "https://barbend.com/wp-content/uploads/2024/01/Wells.jpg",
-      title: "One more bite...",
-      text: "Can't believe how delicious these are. I tried a slice, and now I order every weekend!",
-    },
-    {
-      name: "Marcus J.",
-      image:
-        "https://media.istockphoto.com/id/1335941248/photo/shot-of-a-handsome-young-man-standing-against-a-grey-background.jpg?s=612x612&w=0&k=20&c=JSBpwVFm8vz23PZ44Rjn728NwmMtBa_DYL7qxrEWr38=",
-      title: "Spicy Surprise",
-      text: "Didn't expect to love Jalapeno banana bread, but wow! It's my new fav combo. Perfect sweet heat.",
-    },
-    {
-      name: "Albert F",
-      image: Chef,
-      title: "Banana Bread Guru",
-      text: "I thought I knew banana bread until I tried this. The flavors are on another level!",
-    },
-  ]
+const reviews = [
+  {
+    name: "Tina M.",
+    flavor: "Jalapeño Banana Bread",
+    rating: 5,
+    content:
+      "Spicy AND sweet? I was skeptical but it absolutely worked. Unexpectedly addictive!",
+  },
+  {
+    name: "Jake R.",
+    flavor: "Chocolate Banana Bread",
+    rating: 5,
+    content:
+      "This should be illegal. So fudgy, rich, and still somehow fluffy? Unreal.",
+  },
+  {
+    name: "Elena V.",
+    flavor: "Mango Coconut (Test Flavor)",
+    rating: 4,
+    content:
+      "Loved the tropical twist — it felt like vacation in a loaf. Try it if you’re feeling bold!",
+  },
+  {
+    name: "Matt C.",
+    flavor: "Classic Banana Bread",
+    rating: 5,
+    content:
+      "Just like grandma's but better. Moist, flavorful, and doesn't break the bank.",
+  },
+  {
+    name: "Nina L.",
+    flavor: "Peanut Butter Banana Bread",
+    rating: 5,
+    content:
+      "Perfect combo of nutty and sweet. Ate three slices without blinking.",
+  },
+]
 
-  const [currentIndex, setCurrentIndex] = React.useState(0)
+export default function TestimonialCarousel() {
+  const [index, setIndex] = useState(0)
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length)
-    }, 5000)
+  const next = () => setIndex((index + 1) % reviews.length)
+  const prev = () => setIndex((index - 1 + reviews.length) % reviews.length)
 
-    return () => clearInterval(interval) // Cleanup interval on component unmount
-  }, [reviews.length])
-
-  const currentReview = reviews[currentIndex]
+  const { name, flavor, rating, content } = reviews[index]
 
   return (
-    <div className="review-page">
-      <div className="reviewSquare">
-        <div className="headerSpace">
-          <div className="profile">
-            <img
-              src={currentReview.image}
-              alt="Profile"
-              className="profile-image"
-            />
-            <div className="profile-details">
-              <h2 className="profile-name">{currentReview.name}</h2>
-            </div>
-          </div>{" "}
-        </div>
-        <div className="starRating">
-          {[...Array(5)].map((_, index) => (
-            <span
-              key={index}
-              className={`fa fa-star ${
-                index < currentReview.rating ? "checked" : ""
-              }`}
-            ></span>
+    <div className="carousel-wrapper">
+      <h2 className="carousel-title">What Our Fans Are Saying 🍌</h2>
+
+      <div className="testimonial-container">
+        <div className="testimonial-stars">
+          {[...Array(rating)].map((_, i) => (
+            <Star key={i} className="w-5 h-5 fill-yellow-400" />
           ))}
         </div>
-        <p className="reviewTitle">
-          <strong>{currentReview.title}</strong>
+        <p className="testimonial-text">"{content}"</p>
+        <p className="testimonial-author">
+          — {name} | <span className="testimonial-flavor">{flavor}</span>
         </p>
-        <div className="reviewText">
-          <p className="review-text">{currentReview.text}</p>
+        <div className="absolute inset-y-0 left-0 flex items-center pl-4">
+          <button onClick={prev} className="carousel-button button-left">
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+        </div>
+        <div className="absolute inset-y-0 right-0 flex items-center pr-4">
+          <button onClick={next} className="carousel-button button-right">
+            <ChevronRight className="w-6 h-6" />
+          </button>
         </div>
       </div>
     </div>
   )
 }
-
-export default Review
