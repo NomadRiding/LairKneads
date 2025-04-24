@@ -37,3 +37,72 @@
   font-size: 0.7em; /* Smaller font size for the disclaimer */
   color: #ccc; /* Lighter color for the disclaimer text */
 }
+
+.linkables {
+  margin-top: 10px;
+  font-size: 0.9em; /* Slightly larger font size for linkables */
+  color: #ccc; /* Lighter color for the linkables text */
+  text-decoration: none; /* Remove underline from links */
+  padding: 2px 5px; /* Padding for linkables */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between; /* Space them evenly */
+  align-items: center; /* Align them vertically */
+  margin-top: 20px; /* Add spacing above the sections */
+  gap: 20px; /* Add space between the sections */
+}
+
+.linkable-item {
+  margin: 0 5px; /* Space between linkables */
+  color: #30c5f3; /* Color for linkables */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.notable-links {
+  display: flex;
+  flex-direction: column; /* Stack items vertically inside */
+  gap: 10px; /* Space between notable links */
+  width: 40%; /* Adjust width to fit side by side */
+  justify-content: flex-start; /* Align content to the left */
+  text-align: left; /* Align text to the left */
+  padding-left: 10px;
+}
+
+.FollowSection {
+  display: flex;
+  flex-direction: column; /* Stack items vertically inside */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  width: 40%; /* Adjust width to fit side by side */
+  margin: 0 auto; /* Center the FollowSection horizontally within the container */
+  text-align: center; /* Center-align text inside the FollowSection */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+  .social-media-links {
+    flex-direction: column; /* Stack icons vertically on small screens */
+    align-items: center; /* Center align the icons */
+  }
+
+  .social-media-links a {
+    font-size: 20px; /* Smaller icon size on small screens */
+  }
+  .disclaimer,
+  .linkables {
+    font-size: 0.8em; /* Adjust font size for smaller screens */
+  }
+  .footer-content {
+    flex-direction: column; /* Stack sections vertically on small screens */
+    align-items: center; /* Center align the sections */
+    gap: 20px; /* Add spacing between stacked sections */
+  }
+
+  .notable-links,
+  .FollowSection {
+    width: 100%; /* Full width for smaller screens */
+    text-align: center; /* Center-align text for smaller screens */
+  }
+}
