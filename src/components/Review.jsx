@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { ChevronLeft, ChevronRight, Star } from "lucide-react"
-import "./review.css"
+import "./Review.css"
 
 const reviews = [
   {
