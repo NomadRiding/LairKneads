@@ -15,7 +15,6 @@ function ChocolateBB() {
         alt="Classic Banana Bread"
         className="Product-image"
       />
-      <script async src="https://js.stripe.com/v3/buy-button.js"></script>
       <div className="payment">
         <script async src="https://js.stripe.com/v3/buy-button.js"></script>
 

@@ -15,8 +15,8 @@ function ClassicBB() {
         alt="Classic Banana Bread"
         className="Product-image"
       />
-      <script async src="https://js.stripe.com/v3/buy-button.js"></script>
       <div className="payment">
+      <script async src="https://js.stripe.com/v3/buy-button.js"></script>
         <stripe-buy-button
           buy-button-id="buy_btn_1RIXz1GEWPF2G2I397N8xpxi"
           publishable-key="pk_live_51RIWlVGEWPF2G2I3lNFHTmIfMNkeUZ4jjn9A2JygcirLct1IzL61K8f1CwFWIwFL94RQ30lywa9qVIJKrbDZVq0r003Gv4vukz"

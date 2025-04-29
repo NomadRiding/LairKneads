@@ -15,12 +15,11 @@ function StrawberryBB() {
         alt="Classic Banana Bread"
         className="Product-image"
       />
-      <script async src="https://js.stripe.com/v3/buy-button.js"></script>
       <div className="payment">
         <script async src="https://js.stripe.com/v3/buy-button.js"></script>
 
         <stripe-buy-button
-          buy-button-id="buy_btn_1RIbhGGEWPF2G2I3lCnpfrpd"
+          buy-button-id="buy_btn_1RJ3AqGEWPF2G2I3wER9ecwC"
           publishable-key="pk_live_51RIWlVGEWPF2G2I3lNFHTmIfMNkeUZ4jjn9A2JygcirLct1IzL61K8f1CwFWIwFL94RQ30lywa9qVIJKrbDZVq0r003Gv4vukz"
         ></stripe-buy-button>
       </div>
