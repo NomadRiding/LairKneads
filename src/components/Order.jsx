@@ -1,6 +1,10 @@
 import React from "react"
 import Layout from "./Layout"
 import "./Order.css" // Import the CSS file for styling
+import ClassicBB from "../Products/ClassicBB"
+import ChocolateBB from "../Products/ChocolateBB"
+import StrawberryBB from "../Products/StrawberryBB"
+import JalapenoBB from "../Products/JalapenoBB"
 
 function Order() {
   return (
@@ -68,7 +72,7 @@ function Order() {
           Loading…
         </iframe> */}
 
-        <iframe
+        {/* <iframe
           src="https://tally.so/embed/wzb4P0?alignLeft=1&transparentBackground=1&dynamicHeight=1"
           loading="lazy"
           width="100%"
@@ -77,7 +81,13 @@ function Order() {
           marginheight="0"
           marginwidth="0"
           title="Order Form"
-        ></iframe>
+        ></iframe> */}
+        <div className="Product-Container">
+          <ClassicBB />
+          <ChocolateBB />
+          <StrawberryBB />
+          <JalapenoBB />
+        </div>
       </div>
     </Layout>
   )
