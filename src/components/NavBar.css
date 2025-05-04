@@ -1,23 +1,42 @@
+/* Styling for the NavBanner */
+.NavBanner {
+  background-color: #4b3832; /* Dark brown color for the banner */
+  color: azure; /* Text color */
+  font-size: 0.7em; /* Smaller font size for the banner */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the content horizontally */
+  width: 100%;
+  height: 20px; /* Smaller height for the banner */
+  position: fixed; /* Fix the banner at the top */
+  top: 0; /* Ensure it stays at the very top */
+  z-index: 1100; /* Higher z-index than the navbar */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
+}
+
+/* Adjust the main nav bar to sit below the NavBanner */
 nav {
   display: flex;
-  background-color: #4B3832;
+  background-color: #4b3832;
   color: azure;
   align-items: center;
-  justify-content: space-between; /* Ensures proper spacing between elements */
+  justify-content: space-between;
   width: 100%;
   height: 60px;
   padding: 0;
   margin: 0;
-  position: fixed; /* Keeps the nav bar fixed at the top */
-  top: 0; /* Ensures it stays at the very top */
-  z-index: 1000; /* Ensures it stays above other elements */
+  position: fixed;
+  top: 15px; /* Push the navbar below the NavBanner */
+  z-index: 1000; /* Ensure it stays below the NavBanner */
 }
 
+/* Logo styling */
 .logo {
   font-size: 2em;
-  padding-left: 10px; /* Padding for the logo */
+  padding-left: 10px;
 }
 
+/* List item styling */
 li {
   list-style: none;
   margin: 0;
@@ -28,62 +47,53 @@ li {
   align-items: center;
 }
 
-h1 {
-  padding-left: 10px;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-  display: flex; /* Ensures the list items are displayed inline */
-}
-
+/* Link styling */
 a {
   color: azure;
   text-decoration: none;
-  position: relative; /* Required for positioning the ::after pseudo-element */
-}
-
-a::after {
-  content: ""; /* Creates an empty pseudo-element */
-  position: absolute;
-  bottom: -4px; /* Positions the bar at the bottom of the text */
-  left: 0;
-  width: 0; /* Initially, the bar is not visible */
-  height: 2px; /* Height of the loading bar */
-  background-color: #ffcc00; /* Color of the loading bar */
-  transition: width 0.4s ease; /* Smooth transition for the width */
+  position: relative;
 }
 
 a:hover {
-  color: #ffcc00; /* Changes text color on hover */
+  color: #ffcc00;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ffcc00;
+  transition: width 0.4s ease;
 }
 
 a:hover::after {
-  width: 100%; /* Expands the bar to full width on hover */
+  width: 100%;
 }
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {
+  .NavBanner {
+    font-size: 0.8em; /* Reduce font size for smaller screens */
+    height: 25px; /* Reduce height for smaller screens */
+  }
+
+  nav {
+    top: 25px; /* Adjust navbar position for smaller screens */
+  }
+
   .logo {
-    font-size: 1.5em; /* Reduce logo font size */
+    font-size: 1.5em;
   }
 
   li {
-    margin-right: 10px; /* Reduce spacing between list items */
-    padding: 5px; /* Reduce padding for list items */
+    margin-right: 10px;
+    padding: 5px;
   }
 
   a {
-    font-size: 0.9em; /* Reduce font size for links */
-  }
-}
-
-/* Media query for Android-specific adjustments */
-@media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: 768px) {
-  .Logo-style {
-    -webkit-text-stroke: none; /* Disable text stroke on Android */
-    color: #ce9b10; /* Use a golden color instead */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add a shadow for depth */
+    font-size: 0.9em;
   }
 }
