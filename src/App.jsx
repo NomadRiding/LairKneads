@@ -8,6 +8,7 @@ import Login from "./components/Login"
 import HomePage from "./HomePage/HomePage"
 import Recipes from "./components/Recipes"
 import Blog from "./components/Blog"
+import Roulette from "./components/Roulette"
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/Recipes" element={<Recipes />} />
       <Route path="/Blog" element={<Blog />} />
+      <Route path="/Roulette" element={<Roulette />} />
+      <Route path="*" element={<HomePage />} />
     </Routes>
   )
 }

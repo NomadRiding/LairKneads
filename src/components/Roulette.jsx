@@ -1,20 +1,35 @@
 import React, { useState } from "react"
 import "./Roulette.css"
+import Tiktok from "../assets/TiktokBlack.png" // Correctly imported Tiktok image
+import Instagram from "../assets/InstagramBlack.png" // Correctly imported Instagram image
 
 function Roulette() {
   const [isSpinning, setIsSpinning] = useState(false)
   const [winner, setWinner] = useState(null)
 
-  const names = [
-    "Alice",
-    "Bob",
-    "Charlie",
-    "David",
-    "Eve",
-    "Frank",
-    "Grace",
-    "Helen",
-  ]
+  const [names, setNames] = useState([
+    {
+      location: (
+        <img src={Tiktok} alt="Tiktok" className="social-icons" />
+      ), // Use the imported Tiktok image
+      name: "@username",
+      flavor: "Vanilla",
+    },
+    {
+      location: (
+        <img src={Instagram} alt="Instagram" className="social-icons" />
+      ), // Use the imported Instagram image
+      name: "@usernamePerson",
+      flavor: "Chocolate",
+    },
+    {
+      location: (
+        <img src={Tiktok} alt="Tiktok" className="social-icons" />
+      ), // Use the imported Tiktok image
+      name: "@thirdusername",
+      flavor: "Strawberry",
+    },
+  ])
 
   const handleSpin = () => {
     if (isSpinning) return
@@ -22,7 +37,6 @@ function Roulette() {
     setIsSpinning(true)
     setWinner(null)
 
-    // Randomly select a name
     const randomIndex = Math.floor(Math.random() * names.length)
     const chosenName = names[randomIndex]
 
@@ -35,28 +49,52 @@ function Roulette() {
 
   return (
     <div className="spinner-container">
-      {winner && <h2 className="winner-message">{`${winner} has won!`}</h2>}
-      <div className="square">
-        <div
-          className={`name-container ${isSpinning ? "spinning" : ""}`}
-          style={{ justifyContent: winner ? "center" : "flex-start" }}
-        >
-          {isSpinning
-            ? [...names, ...names].map((name, index) => (
-                <div key={index} className="name">
-                  {name}
-                </div>
-              ))
-            : winner && <div className="name winner-name">{winner}</div>}
+      {winner && (
+        <div className="winner-message-container">
+          <h2 className="winner-message">
+            {`Next episode will have ${winner.flavor}`}{" "}
+          </h2>
+          <h2 className="winner-message">
+            {`Submitted by `}
+            {winner.location} {winner.name}!
+          </h2>
+        </div>
+      )}
+      <div className="containBox">
+        <div className="legend">
+          <h2>Submitted</h2>
+          {names.map((entry, index) => (
+            <div key={index} className="nameList">
+              {entry.location} {entry.name} - {entry.flavor}
+            </div>
+          ))}
+        </div>
+        <div className="roulette-container">
+          <div className="square">
+            <div
+              className={`name-container ${isSpinning ? "spinning" : ""}`}
+              style={{ justifyContent: winner ? "center" : "flex-start" }}
+            >
+              {isSpinning
+                ? [...names, ...names].map((entry, index) => (
+                    <div key={index} className="name">
+                      {entry.name}
+                    </div>
+                  ))
+                : winner && (
+                    <div className="name winner-name">{winner.name}</div>
+                  )}
+            </div>
+          </div>
+          <button
+            onClick={handleSpin}
+            className="spin-button"
+            disabled={isSpinning}
+          >
+            Spin
+          </button>
         </div>
       </div>
-      <button
-        onClick={handleSpin}
-        className="spin-button"
-        disabled={isSpinning}
-      >
-        Spin
-      </button>
     </div>
   )
 }
