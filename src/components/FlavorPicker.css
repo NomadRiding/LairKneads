@@ -40,3 +40,94 @@
 .flavorSubmitButton:hover {
   background-color: #218838;
 }
+
+.flavorLegend ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flavorListItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Distribute space between elements */
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.flavorListItem:hover {
+  background-color: #f1f1f1; /* Light gray background on hover */
+  cursor: pointer;
+}
+
+.platformIcon {
+  margin-right: 10px;
+}
+
+.likeCount {
+  display: inline-block;
+  min-width: 30px; /* Minimum width for small numbers */
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background-color: #007bff; /* Blue background */
+  color: white; /* White text */
+  border-radius: 8px; /* Rounded edges */
+  font-weight: bold;
+  margin-left: 10px;
+  padding: 0 5px; /* Add padding for larger numbers */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.likeCount:hover::after {
+  content: attr(
+    data-full-likes
+  ); /* Use the full number stored in a data attribute */
+  position: absolute;
+  top: -30px; /* Position above the likeCount box */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 10;
+  pointer-events: none; /* Prevent interaction with the tooltip */
+}
+
+.likeButton {
+  margin-left: 10px; /* Add spacing between the like button and other elements */
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.likeButton:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.likeButton:focus {
+  outline: 2px solid #0056b3; /* Blue outline for focus */
+  outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+  .flavorListItem {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .likeButton {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
