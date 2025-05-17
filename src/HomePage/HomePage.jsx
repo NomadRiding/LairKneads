@@ -5,6 +5,7 @@ import HeroText from "../components/HeroText"
 import Layout from "../components/Layout"
 import TestimonialCarousel from "../components/Review"
 import Countdown from "../components/Countdown"
+import FlavorPicker from "../components/FlavorPicker"
 
 function HomePage() {
   return (
@@ -13,6 +14,7 @@ function HomePage() {
         <HeroText />
         <Slideshow />
       </div>
+      <FlavorPicker />
       <Countdown />
       <TestimonialCarousel />
     </Layout>
